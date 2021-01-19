@@ -92,7 +92,7 @@
 
 <?php else: ?>
     <h1 class="py-3">Bilietų formavimo forma</h1>
-    <form method="post" class="w-50 ">
+    <form method="post" class="w-75 ">
         <div class="form-group">
             <select name="flight-number" class="form-control">
                 <option selected disabled>Pasirinkite skrydžio nr</option>
@@ -100,26 +100,6 @@
                     <option value="<?= $number; ?>"><?= $number; ?></option>
                 <?php endforeach; ?>
             </select>
-        </div>
-        <div class="form-group">
-            <label for="person-id">Asmens kodas:</label>
-            <input type="number" name="person-id" id="person-id" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="name">Vardas:</label>
-            <input type="text" name="name" id="name" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="last-name">Pavardė:</label>
-            <input type="text" name="last-name" id="last-name" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="email">El paštas:</label>
-            <input type="text" name="email" id="email" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="tel">Tel nr:</label>
-            <input type="text" name="tel" id="tel" class="form-control">
         </div>
         <div class="form-group">
             <select name="flight-from-where" class="form-control">
@@ -138,7 +118,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="price">Kaina:</label>
+            <label for="price">Bilieto kaina:</label>
             <input type="text" name="price" id="price" class="form-control">
         </div>
         <div class="form-group">
@@ -148,6 +128,32 @@
                     <option value="<?= $weight; ?>"><?= $weight; ?></option>
                 <?php endforeach; ?>
             </select>
+        </div>
+        <div class="row mx-2">
+        <div class="col-6 mr-2">
+        <div class="form-group row">
+            <label for="name">Vardas:</label>
+            <input type="text" name="name" id="name" class="form-control">
+        </div>
+        <div class="form-group row">
+            <label for="last-name">Pavardė:</label>
+            <input type="text" name="last-name" id="last-name" class="form-control">
+        </div>
+        <div class="form-group row">
+            <label for="person-id">Asmens kodas:</label>
+            <input type="number" name="person-id" id="person-id" class="form-control">
+        </div>
+        </div>
+        <div class="col">
+        <div class="form-group row">
+            <label for="email">El paštas:</label>
+            <input type="text" name="email" id="email" class="form-control">
+        </div>
+        <div class="form-group row">
+            <label for="tel">Tel nr:</label>
+            <input type="text" name="tel" id="tel" class="form-control">
+        </div>
+    </div>
         </div>
         <div class="form-group">
             <label for="message">Pastabos:</label>
