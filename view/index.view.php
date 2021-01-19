@@ -33,7 +33,7 @@
         <?php endif ?>
     <?php endif ?>
     <?php if (isset($_POST['send']) & empty($validation_errors)): ?>
-    <div class="bg-secondary container w-75 mt-5">
+    <div class="bg-secondary container w-75 mt-5 rounded">
         <div class="row">
             <h3 class="col text-white">Skrydžio bilieto informacija</h3>
         </div>
