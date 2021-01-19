@@ -129,7 +129,7 @@
                 <?php endforeach; ?>
             </select>
         </div>
-        <div class="row mx-2">
+        <div class="row mx-1">
         <div class="col-6 mr-2">
         <div class="form-group row">
             <label for="name">Vardas:</label>
