@@ -56,4 +56,5 @@ function printData()
         }
     }
     echo "</tr></tbody></table>";
+
 }

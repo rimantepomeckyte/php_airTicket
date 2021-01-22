@@ -13,7 +13,27 @@
     <?php endif ?>
     <?php if (isset($_POST['send']) & empty($validation)): ?>
         <h2 class="text-center">Formos duomenys</h2>
+        <form method="post">
+            <div class='form-group row d-flex justify-content-center'>
+                <select name="search-flight" class="form-control col-7">
+                    <option selected disabled>Ieškoti pagal skrydžio nr</option>
+                    <?php foreach ($flight_numbers as $number): ?>
+                        <option value="<?= $number; ?>"><?= $number; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <button name='search-btn' id='search-btn'
+                        class='ml-2 btn btn-primary text-center col-lg-1 col-md-2 col-3' type="submit">Ieškoti
+                </button>
+            </div>
+        </form>
         <?php printData(); ?>
+        <?php if (isset($_POST['search-btn'])): ?>
+            <?php if ($_POST['search-flight'] != $_POST['flight-number']) {
+                echo "Nėra tokio skrydzio";
+            } ?>
+        <?php else: ?>
+            <?php search(); ?>
+        <?php endif; ?>
 
     <?php elseif (isset($_POST['print']) & empty($validation)): ?>
         <div class="bg-secondary container w-75 mt-5 rounded-lg">
