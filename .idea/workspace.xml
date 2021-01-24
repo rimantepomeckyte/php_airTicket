@@ -20,11 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c7505c0-6bf0-4e31-bf4e-ed08805df911" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/inc/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/flights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/flights.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/search.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/index.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/view/index.view.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +66,8 @@
       <updated>1611035979546</updated>
       <workItem from="1611035980634" duration="14330000" />
       <workItem from="1611131469171" duration="131000" />
-      <workItem from="1611300174726" duration="14908000" />
+      <workItem from="1611300174726" duration="23451000" />
+      <workItem from="1611506889751" duration="2570000" />
     </task>
     <servers />
   </component>
@@ -85,6 +84,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1611301005344">
