@@ -22,14 +22,18 @@ function validate($data)
     return $validation;
 }
 
-function printData()
-{
+function getData (){
     $data = 'data/flights.txt';
     $content = file_get_contents($data);//musu failas content
     $formData = implode(',', $_POST);//cia tiesiog zenkliukas , atskirti reiksmes, konvertuojam i stringa
     $content .= $formData . "/n";//prijungiu prie to failo content duomenis
     file_put_contents($data, $content);//i txt faila as noriu ideti stringa
+}
 
+
+
+function printData()
+{
     $flights = file_get_contents('data/flights.txt', true);
     $flights = explode('/n', $flights);
 
@@ -50,7 +54,7 @@ function printData()
         echo "<tr>";
         $array = explode(',', $flight);
         foreach ($array as $value) {
-            if ($value != $_POST['send']) {
+            if ($value != $_POST['send'] ) {
                 echo "<td>$value</td>";
             }
         }

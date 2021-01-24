@@ -8,31 +8,59 @@
 </head>
 <body>
 <div class="container">
-    <?php if (isset($_POST['send']) || isset($_POST['print'])): ?>
-        <?php validate($_POST); ?>
-    <?php endif ?>
-    <?php if (isset($_POST['send']) & empty($validation)): ?>
-        <h2 class="text-center">Formos duomenys</h2>
-        <form method="post" >
+    <!--<?php if (isset($_POST['get-table'])): ?>
+        <?php getData(); ?>
+        <h2 class="text-center">Rezervuoti skrydžiai</h2>
+        <form method="post">
             <div class='form-group row d-flex justify-content-center'>
                 <select name="search-flight" class="form-control col-7">
                     <option selected disabled>Ieškoti pagal skrydžio nr</option>
-                    <?php foreach ($flight_numbers as $number): ?>
-                        <option value="<?= $number; ?>"><?= $number; ?></option>
-                    <?php endforeach; ?>
+                    <?php option(); ?>
                 </select>
                 <button name='search-btn' id='search-btn'
                         class='ml-2 btn btn-primary text-center col-lg-1 col-md-2 col-3' type="submit">Ieškoti
                 </button>
             </div>
         </form>
-
         <?php printData(); ?>
+        <?php die(); ?>
+    <?php endif; ?> -->
+    <?php if (isset($_POST['send']) || isset($_POST['print'])): ?>
+        <?php validate($_POST); ?>
+    <?php endif ?>
+    <?php if (isset($_POST['send']) & empty($validation)): ?>
+        <?php getData(); ?>
+        <h2 class="text-center">Rezervuoti skrydžiai</h2>
+        <form method="post">
+            <div class='form-group row d-flex justify-content-center'>
+                <select name="search-flight" class="form-control col-7">
+                    <option selected disabled>Ieškoti pagal skrydžio nr</option>
+                    <?php option(); ?>
+                </select>
+                <button name='search-btn' id='search-btn'
+                        class='ml-2 btn btn-primary text-center col-lg-1 col-md-2 col-3' type="submit">Ieškoti
+                </button>
+            </div>
+        </form>
+        <?php printData(); ?>
+        <?php die(); ?>
     <?php endif; ?>
-        <?php if (isset($_POST['search-btn'])): ?>
-
-            <?php search(); ?>
-        <?php endif; ?>
+    <?php if (isset($_POST['search-btn'])): ?>
+        <h2 class="text-center">Rezervuoti skrydžiai</h2>
+        <form method="post">
+            <div class='form-group row d-flex justify-content-center'>
+                <select name="search-flight" class="form-control col-7">
+                    <option selected disabled>Ieškoti pagal skrydžio nr</option>
+                    <?php option(); ?>
+                </select>
+                <button name='search-btn' id='search-btn'
+                        class='ml-2 btn btn-primary text-center col-lg-1 col-md-2 col-3' type="submit">Ieškoti
+                </button>
+            </div>
+        </form>
+        <?php search(); ?>
+        <?php die(); ?>
+    <?php endif; ?>
 
     <?php if (isset($_POST['print']) & empty($validation)): ?>
         <div class="bg-secondary container w-75 mt-5 rounded-lg">
@@ -98,78 +126,93 @@
                 <?= $errors; ?>
             </div>
         <?php endforeach; ?>
-        <h1 class="py-3">Bilietų formavimo forma</h1>
-        <form method="post" class="w-75 ">
-            <div class="form-group">
-                <select name="flight-number" class="form-control">
-                    <option selected disabled>Pasirinkite skrydžio nr</option>
-                    <?php foreach ($flight_numbers as $number): ?>
-                        <option value="<?= $number; ?>"><?= $number; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <select name="flight-from-where" class="form-control">
-                    <option selected disabled>Pasirinkite iš kur skrydis</option>
-                    <?php foreach ($from_where as $from): ?>
-                        <option value="<?= $from; ?>"><?= $from; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <select name="flight-to-where" class="form-control">
-                    <option selected disabled>Pasirinkite į kur skrydis</option>
-                    <?php foreach ($to_where as $to): ?>
-                        <option value="<?= $to; ?>"><?= $to; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="price">Bilieto kaina:</label>
-                <input type="text" name="price" id="price" class="form-control">
-            </div>
-            <div class="form-group">
-                <select name="baggage" class="form-control">
-                    <option selected disabled>Pasirinkite bagažo svorį, kg</option>
-                    <?php foreach ($baggage as $weight): ?>
-                        <option value="<?= $weight; ?>"><?= $weight; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div class="row mx-1">
-                <div class="col-6 mr-2">
-                    <div class="form-group row">
-                        <label for="name">Vardas:</label>
-                        <input type="text" name="name" id="name" class="form-control">
+
+        <h1 class="py-3 text-center">Bilietų formavimo forma</h1>
+        <div class="container">
+            <form method="post">
+            <!--    <button type="submit" name="get-table" id="get-table" class="btn btn-primary text-center col-lg-1 col-md-2 col-3">
+                    Rezervacijos
+                </button>-->
+                <div class="row d-flex justify-content-center">
+                    <div class="form-group col-5 align-self-center pt-4">
+                        <select name="flight-number" class="form-control mt-2">
+                            <option selected disabled>Pasirinkite skrydžio nr</option>
+                            <?php foreach ($flight_numbers as $number): ?>
+                                <option value="<?= $number; ?>"><?= $number; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
-                    <div class="form-group row">
-                        <label for="last-name">Pavardė:</label>
-                        <input type="text" name="last-name" id="last-name" class="form-control">
+                        <div class="form-group col-5">
+                            <label for="name">Vardas:</label>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="person-id">Asmens kodas:</label>
-                        <input type="number" name="person-id" id="person-id" class="form-control">
+                    <div class="row d-flex justify-content-center">
+                        <div class="form-group col-5 align-self-center pt-4">
+                            <select name="flight-from-where" class="form-control mt-2">
+                                <option selected disabled>Pasirinkite iš kur skrydis</option>
+                                <?php foreach ($from_where as $from): ?>
+                                    <option value="<?= $from; ?>"><?= $from; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="last-name">Pavardė:</label>
+                            <input type="text" name="last-name" id="last-name" class="form-control">
+                        </div>
                     </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="form-group col-5 align-self-center pt-4">
+                            <select name="flight-to-where" class="form-control mt-2">
+                                <option selected disabled>Pasirinkite į kur skrydis</option>
+                                <?php foreach ($to_where as $to): ?>
+                                    <option value="<?= $to; ?>"><?= $to; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="person-id">Asmens kodas:</label>
+                            <input type="number" name="person-id" id="person-id" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="form-group col-5">
+                            <label for="price">Bilieto kaina:</label>
+                            <input type="text" name="price" id="price" class="form-control">
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="email">El paštas:</label>
+                            <input type="text" name="email" id="email" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="form-group col-5 align-self-center pt-4">
+                            <select name="baggage" class="form-control mt-2">
+                                <option selected disabled>Pasirinkite bagažo svorį, kg</option>
+                                <?php foreach ($baggage as $weight): ?>
+                                    <option value="<?= $weight; ?>"><?= $weight; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="tel">Tel nr:</label>
+                            <input type="text" name="tel" id="tel" class="form-control">
+                        </div>
+                    </div>
+                <div class="form-group row d-flex justify-content-center">
+                    <label for="message" class="col-2 col-lg-1">Pastabos:</label>
+                    <input type="text" name="message" id="message" class="form-control col-6">
                 </div>
-                <div class="col">
-                    <div class="form-group row">
-                        <label for="email">El paštas:</label>
-                        <input type="text" name="email" id="email" class="form-control">
-                    </div>
-                    <div class="form-group row">
-                        <label for="tel">Tel nr:</label>
-                        <input type="text" name="tel" id="tel" class="form-control">
-                    </div>
+                <div class="row d-flex justify-content-center pb-4">
+                    <button type="submit" name="print" id="print"
+                            class="btn btn-primary text-center col-lg-2 col-md-3 col-4 mr-3 ">Spausdinti
+                    </button>
+                    <button type="submit" name="send" id="send" class="btn btn-primary text-center col-lg-2 col-md-3 col-4">
+                        Įrašyti
+                    </button>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="message">Pastabos:</label>
-                <input type="text" name="message" id="message" class="form-control">
-            </div>
-            <button type="submit" name="print" id="print" class="mt-3 btn btn-primary btn-lg text-center">Spausdinti
-            </button>
-            <button type="submit" name="send" id="send" class="mt-3 btn btn-primary btn-lg text-center">Įrašyti</button>
-        </form>
+            </form>
+        </div>
     <?php endif; ?>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
