@@ -46,3 +46,19 @@ function printData()
         echo "</tr>";
     }
 }
+function printReservations()
+{
+    $flights = file_get_contents('data/flights.txt', true);
+    $flights = explode('/n', $flights);
+
+    foreach ($flights as $flight) {
+        echo "<tr>";
+        $array = explode(',', $flight);
+        foreach ($array as $value) {
+            if ($value != $_POST['get-table'] ) {
+                echo "<td>$value</td>";
+            }
+        }
+        echo "</tr>";
+    }
+}

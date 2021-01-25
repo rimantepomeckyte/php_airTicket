@@ -8,6 +8,9 @@
 </head>
 <body>
 <div class="container">
+    <?php if (isset($_POST['send']) || isset($_POST['print'])): ?>
+        <?php validate($_POST); ?>
+    <?php endif ?>
     <?php if (isset($_POST['get-table'])): ?>
 
         <h2 class="text-center">Rezervuoti skrydžiai</h2>
@@ -15,7 +18,9 @@
             <div class='form-group row d-flex justify-content-center'>
                 <select name="search-flight" class="form-control col-7">
                     <option selected disabled>Ieškoti pagal skrydžio nr</option>
-                    <?php option(); ?>
+                    <?php foreach ($flight_numbers as $number): ?>
+                        <option value="<?= $number; ?>"><?= $number; ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <button name='search-btn' id='search-btn'
                         class='ml-2 btn btn-primary text-center col-lg-1 col-md-2 col-3' type="submit">Ieškoti
@@ -25,7 +30,7 @@
         <table class='table table-dark'>
             <thead>
             <tr>
-                <th>Skrydžio nr</th>
+                <th >Skrydžio nr</th>
                 <th>Iš kur</th>
                 <th>Į kur</th>
                 <th>Bilieto kaina</th>
@@ -39,14 +44,12 @@
             </tr>
             </thead>
             <tbody>
-            <?php printData(); ?>
+            <?php printReservations(); ?>
             </tbody>
         </table>
         <?php die(); ?>
     <?php endif; ?>
-    <?php if (isset($_POST['send']) || isset($_POST['print'])): ?>
-        <?php validate($_POST); ?>
-    <?php endif ?>
+
     <?php if (isset($_POST['send']) & empty($validation)): ?>
         <?php getData(); ?>
         <h2 class="text-center">Rezervuoti skrydžiai</h2>
@@ -192,10 +195,13 @@
         <h1 class="py-3 text-center">Bilietų formavimo forma</h1>
         <div class="container">
             <form method="post">
-               <div class="row d-flex justify-content-end"><button type="submit" name="get-table" id="get-table" class="btn btn-primary text-center col-lg-2 col-md-3 col-4">
-                    Rezervacijos
-                </button></div>
-    <div class="row d-flex justify-content-center">
+                <div class="row d-flex justify-content-end">
+                    <button type="submit" name="get-table" id="get-table"
+                            class="btn btn-primary text-center col-lg-2 col-md-3 col-4">
+                        Rezervacijos
+                    </button>
+                </div>
+                <div class="row d-flex justify-content-center">
                     <div class="col-5">
                         <div class="form-group row align-self-center pt-4 mr-2">
                             <select name="flight-number" class="form-control mt-2">
