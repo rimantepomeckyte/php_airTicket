@@ -30,8 +30,6 @@ function getData (){
     file_put_contents($data, $content);//i txt faila as noriu ideti stringa
 }
 
-
-
 function printData()
 {
     $flights = file_get_contents('data/flights.txt', true);
@@ -45,5 +43,6 @@ function printData()
                 echo "<td>$value</td>";
             }
         }
+        echo "</tr>";
     }
 }

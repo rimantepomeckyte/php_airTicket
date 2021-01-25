@@ -19,14 +19,13 @@ function search()
     $flights = explode('/n', $flights);
 
     foreach ($flights as $flight) {
-        echo "<tr></tr>";
+        echo "<tr>";
         $array = explode(',', $flight);
         foreach ($array as $item) {
             if ($item != $_POST ['search-btn'] && $_POST['search-flight'] == $array[0]) {
                 echo "<td>$item</td>";
-            }/*elseif ($item != $_POST ['search-btn'] && $_POST['search-flight'] == "Ieškoti pagal skrydžio nr"){
-                echo "Nerasta skrydziu";
-            }*/
+            }
         }
+        echo "</tr>";
     }
 }
