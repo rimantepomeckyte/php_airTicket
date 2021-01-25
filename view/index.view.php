@@ -35,7 +35,9 @@
             <div class='form-group row d-flex justify-content-center'>
                 <select name="search-flight" class="form-control col-7">
                     <option selected disabled>Ieškoti pagal skrydžio nr</option>
-                    <?php option(); ?>
+                    <?php foreach ($flight_numbers as $number): ?>
+                        <option value="<?= $number; ?>"><?= $number; ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <button name='search-btn' id='search-btn'
                         class='ml-2 btn btn-primary text-center col-lg-1 col-md-2 col-3' type="submit">Ieškoti
@@ -65,7 +67,9 @@
             <div class='form-group row d-flex justify-content-center'>
                 <select name="search-flight" class="form-control col-7">
                     <option selected disabled>Ieškoti pagal skrydžio nr</option>
-                    <?php option(); ?>
+                    <?php foreach ($flight_numbers as $number): ?>
+                        <option value="<?= $number; ?>"><?= $number; ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <button name='search-btn' id='search-btn'
                         class='ml-2 btn btn-primary text-center col-lg-1 col-md-2 col-3' type="submit">Ieškoti
