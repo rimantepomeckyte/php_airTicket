@@ -42,7 +42,21 @@
                 </button>
             </div>
         </form>
+    <table class='table table-dark'><thead><tr>
+            <th>Skrydžio nr</th>
+            <th>Iš kur</th>
+            <th>Į kur</th>
+            <th>Bilieto kaina</th>
+            <th>Bagažo svoris kg</th>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+            <th>Asmens kodas</th>
+            <th>El. paštas</th>
+            <th>Tel. nr.</th>
+            <th>Žinutė</th>
+        </tr></thead><tbody><tr>
         <?php printData(); ?>
+          </tr></tbody></table>
         <?php die(); ?>
     <?php endif; ?>
     <?php if (isset($_POST['search-btn'])): ?>
@@ -58,7 +72,21 @@
                 </button>
             </div>
         </form>
+    <table class='table table-dark'><thead><tr>
+            <th>Skrydžio nr</th>
+            <th>Iš kur</th>
+            <th>Į kur</th>
+            <th>Bilieto kaina</th>
+            <th>Bagažo svoris kg</th>
+            <th>Vardas</th>
+            <th>Pavardė</th>
+            <th>Asmens kodas</th>
+            <th>El. paštas</th>
+            <th>Tel. nr.</th>
+            <th>Žinutė</th>
+        </tr></thead><tbody><tr>
         <?php search(); ?>
+        </tbody></tr></table>
         <?php die(); ?>
     <?php endif; ?>
 
