@@ -27,7 +27,7 @@
                 </button>
             </div>
         </form>
-        <table class='table table-dark'>
+        <table class='table table-dark table-sm'>
             <thead>
             <tr>
                 <th >Skrydžio nr</th>
@@ -66,7 +66,7 @@
                 </button>
             </div>
         </form>
-        <table class='table table-dark'>
+        <table class='table table-dark table-sm'>
             <thead>
             <tr>
                 <th>Skrydžio nr</th>
@@ -103,7 +103,7 @@
                 </button>
             </div>
         </form>
-        <table class='table table-dark'>
+        <table class='table table-dark table-sm'>
             <thead>
             <tr>
                 <th>Skrydžio nr</th>
