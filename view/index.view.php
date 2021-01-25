@@ -8,8 +8,8 @@
 </head>
 <body>
 <div class="container">
-    <!--<?php if (isset($_POST['get-table'])): ?>
-        <?php getData(); ?>
+    <?php if (isset($_POST['get-table'])): ?>
+
         <h2 class="text-center">Rezervuoti skrydžiai</h2>
         <form method="post">
             <div class='form-group row d-flex justify-content-center'>
@@ -24,7 +24,7 @@
         </form>
         <?php printData(); ?>
         <?php die(); ?>
-    <?php endif; ?> -->
+    <?php endif; ?>
     <?php if (isset($_POST['send']) || isset($_POST['print'])): ?>
         <?php validate($_POST); ?>
     <?php endif ?>
@@ -130,9 +130,9 @@
         <h1 class="py-3 text-center">Bilietų formavimo forma</h1>
         <div class="container">
             <form method="post">
-            <!--    <button type="submit" name="get-table" id="get-table" class="btn btn-primary text-center col-lg-1 col-md-2 col-3">
+               <button type="submit" name="get-table" id="get-table" class="btn btn-primary text-center col-lg-1 col-md-2 col-3">
                     Rezervacijos
-                </button>-->
+                </button>
                 <div class="row d-flex justify-content-center">
                     <div class="form-group col-5 align-self-center pt-4">
                         <select name="flight-number" class="form-control mt-2">
