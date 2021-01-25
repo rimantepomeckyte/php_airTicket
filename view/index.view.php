@@ -192,10 +192,10 @@
         <h1 class="py-3 text-center">Bilietų formavimo forma</h1>
         <div class="container">
             <form method="post">
-                <button type="submit" name="get-table" id="get-table" class="btn btn-primary text-center col-lg-1 col-md-2 col-3">
+               <div class="row d-flex justify-content-end"><button type="submit" name="get-table" id="get-table" class="btn btn-primary text-center col-lg-2 col-md-3 col-4">
                     Rezervacijos
-                </button>
-                <div class="row d-flex justify-content-center">
+                </button></div>
+    <div class="row d-flex justify-content-center">
                     <div class="col-5">
                         <div class="form-group row align-self-center pt-4 mr-2">
                             <select name="flight-number" class="form-control mt-2">
