@@ -129,6 +129,7 @@
     <?php endif; ?>
 
     <?php if (isset($_POST['print']) & empty($validation)): ?>
+        <?php getData(); ?>
     <div class="container w-75 mt-5">
         <div class="row p-2 d-flex justify-content-between bg-warning rounded-top">
             <h3 class="">Airlines</h3>
@@ -269,11 +270,11 @@
             </div>
             <div class="row d-flex justify-content-center pb-4">
                 <button type="submit" name="print" id="print"
-                        class="btn btn-primary text-center col-lg-2 col-md-3 col-4 mr-3 ">Spausdinti
+                        class="btn btn-primary text-center col-lg-2 col-md-3 col-4 mr-3 ">Spausdinti bilietą
                 </button>
                 <button type="submit" name="send" id="send"
                         class="btn btn-primary text-center col-lg-2 col-md-3 col-4">
-                    Įrašyti
+                    Tik įrašyti
                 </button>
             </div>
         </form>
